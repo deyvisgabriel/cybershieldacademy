@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CyberShield Academy - Centro de capacitación líder en seguridad de la información. Aprende Ethical Hacking, Forense Digital, Criptografía y más con expertos certificados.">
+    <meta name="keywords"
+        content="ciberseguridad, seguridad informática, ethical hacking, forense digital, criptografía, cursos seguridad, capacitación">
+    <meta name="author" content="CyberShield Academy">
+    <meta property="og:title" content="CyberShield Academy | Centro de Capacitación en Ciberseguridad">
+    <meta property="og:description"
+        content="Domina la Seguridad Digital. Protege el Mundo. Cursos especializados en seguridad de la información con instructores certificados.">
+    <meta property="og:type" content="website">
+    <title>CyberShield Academy | Centro de Capacitación en Ciberseguridad</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Particles Background -->
+    <div class="particles-container" id="particles-container"></div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="images/logo.png" alt="CyberShield Academy Logo" class="logo-img">
+                <span class="logo-text">CyberShield<span class="logo-accent">Academy</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#servicios" class="nav-link">Cursos</a></li>
+                <li><a href="#showcase" class="nav-link">Por qué Elegirnos</a></li>
+                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#sobre-nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#contacto" class="nav-link nav-cta-link">Inscríbete</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#servicios" class="mobile-link">Cursos</a></li>
+                <li><a href="#showcase" class="mobile-link">Por qué Elegirnos</a></li>
+                <li><a href="#testimonios" class="mobile-link">Testimonios</a></li>
+                <li><a href="#sobre-nosotros" class="mobile-link">Nosotros</a></li>
+                <li><a href="#contacto" class="mobile-link mobile-cta">Inscríbete Ahora</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-grid-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge animate-badge">
+                    <span class="badge-dot"></span>
+                    🛡️ Centro de Capacitación Certificado en Ciberseguridad
+                </div>
+
+                <h1 class="hero-title animate-title">
+                    Domina la<br>
+                    <span class="title-gradient">Seguridad Digital</span><br>
+                    Protege el Mundo
+                </h1>
+
+                <p class="hero-subtitle animate-subtitle">
+                    Desarrollamos profesionales en ciberseguridad a través de programas intensivos y entornos prácticos
+                    de laboratorio, orientados a la preparación estratégica para rendir certificaciones internacionales
+                    de alto reconocimiento.
+                </p>
+
+                <div class="hero-ctas animate-ctas">
+                    <a href="#servicios" class="btn-primary" id="btn-hero-primary">
+                        <span>Explorar Cursos</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#showcase" class="btn-secondary" id="btn-hero-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10,8 16,12 10,16" />
+                        </svg>
+                        Ver Demo
+                    </a>
+                </div>
+
+                <div class="hero-stats animate-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="2500">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Estudiantes Formados</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Tasa de Certificación</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Certificaciones Avaladas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual animate-visual">
+                <div class="hero-visual-glow"></div>
+                <div class="hero-visual-ring ring-1"></div>
+                <div class="hero-visual-ring ring-2"></div>
+                <div class="hero-visual-ring ring-3"></div>
+                <img src="images/hero_visual.png" alt="CyberShield Hero Visual" class="hero-img floating">
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Desplázate</span>
+        </div>
+    </section>
+
+    <!-- ===================== SOCIAL PROOF ===================== -->
+    <section class="social-proof" id="social-proof">
+        <div class="container">
+            <p class="social-proof-label">Reconocidos y avalados por</p>
+            <div class="partners-track">
+                <div class="partners-slide">
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none">
+                            <rect width="100" height="40" rx="4" fill="none" /><text x="50" y="27" font-family="Inter"
+                                font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">EC-Council</text>
+                        </svg>
+                    </div>
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">ISACA</text></svg>
+                    </div>
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">CompTIA</text></svg>
+                    </div>
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">(ISC)²</text></svg>
+                    </div>
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">OFFENSIVE SEC</text></svg>
+                    </div>
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">SANS Institute</text></svg>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">EC-Council</text></svg>
+                    </div>
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">ISACA</text></svg>
+                    </div>
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">CompTIA</text></svg>
+                    </div>
+                    <div class="partner-item">
+                        <svg class="partner-icon" viewBox="0 0 100 40" fill="none"><text x="50" y="27"
+                                font-family="Inter" font-size="14" font-weight="700" fill="currentColor"
+                                text-anchor="middle">(ISC)²</text></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SERVICIOS / CURSOS ===================== -->
+    <section class="section servicios" id="servicios">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-badge">🎓 Programas de Formación</div>
+                <h2 class="section-title">Nuestros <span class="title-gradient">Cursos Especializados</span></h2>
+                <p class="section-subtitle">Programas diseñados por expertos en activo, con laboratorios hands-on y
+                    preparación para certificaciones internacionales.</p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- Card 1: Fundamentos Estratégicos de Seguridad -->
+                <div class="service-card-flip reveal" style="--delay: 0s">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_1.png" alt="Fundamentos Estratégicos de Seguridad" class="service-image">
+                            <div class="service-overlay">
+                                <div class="service-icon-badge">🛡️</div>
+                                <h3 class="service-title-front">Fundamentos de Seguridad</h3>
+                                <p class="service-hover-hint">Clic para ver detalles →</p>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back">🛡️</div>
+                            <h3 class="service-title-back">Fundamentos Estratégicos de Seguridad de la Información</h3>
+                            <p class="service-description">Construye bases sólidas en seguridad de la información: gestión de riesgos, políticas corporativas, modelado de amenazas y marcos estratégicos como ISO 27001 y NIST. El punto de partida ideal para cualquier profesional del sector.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">ISO 27001</span>
+                                <span class="feature-tag">NIST Framework</span>
+                                <span class="feature-tag">Gestión de Riesgos</span>
+                                <span class="feature-tag">Políticas de Seguridad</span>
+                            </div>
+                            <a href="#contacto" class="service-cta-btn">Inscribirme</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Ethical Hacking Desde Cero -->
+                <div class="service-card-flip reveal" style="--delay: 0.1s">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_2.png" alt="Ethical Hacking Desde Cero" class="service-image">
+                            <div class="service-overlay">
+                                <div class="service-icon-badge">⚔️</div>
+                                <h3 class="service-title-front">Ethical Hacking</h3>
+                                <p class="service-hover-hint">Clic para ver detalles →</p>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back">⚔️</div>
+                            <h3 class="service-title-back">Ethical Hacking Desde Cero</h3>
+                            <p class="service-description">Aprende desde los fundamentos hasta técnicas avanzadas de pentesting. Reconocimiento, escaneo, explotación y post-explotación con herramientas reales en laboratorios controlados. Prepárate para la certificación CEH u OSCP.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">CEH / OSCP</span>
+                                <span class="feature-tag">Metasploit</span>
+                                <span class="feature-tag">Kali Linux</span>
+                                <span class="feature-tag">Labs Hands-On</span>
+                            </div>
+                            <a href="#contacto" class="service-cta-btn">Inscribirme</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Active Directory -->
+                <div class="service-card-flip reveal" style="--delay: 0.2s">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_3.png" alt="Seguridad en Active Directory" class="service-image">
+                            <div class="service-overlay">
+                                <div class="service-icon-badge">🏰</div>
+                                <h3 class="service-title-front">Seguridad en Active Directory</h3>
+                                <p class="service-hover-hint">Clic para ver detalles →</p>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back">🏰</div>
+                            <h3 class="service-title-back">Seguridad Ofensiva y Defensiva en Active Directory</h3>
+                            <p class="service-description">Domina los ataques y defensas más críticos sobre infraestructuras Windows/AD: Kerberoasting, Pass-the-Hash, BloodHound, DCSync y hardening avanzado. El curso favorito de Red Teams y Blue Teams.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">Kerberoasting</span>
+                                <span class="feature-tag">BloodHound</span>
+                                <span class="feature-tag">Mimikatz</span>
+                                <span class="feature-tag">AD Hardening</span>
+                            </div>
+                            <a href="#contacto" class="service-cta-btn">Inscribirme</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Ciberseguridad para no Técnicos -->
+                <div class="service-card-flip reveal" style="--delay: 0.3s">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_4.png" alt="Ciberseguridad para no Técnicos" class="service-image">
+                            <div class="service-overlay">
+                                <div class="service-icon-badge">💼</div>
+                                <h3 class="service-title-front">Ciber para no Técnicos</h3>
+                                <p class="service-hover-hint">Clic para ver detalles →</p>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back">💼</div>
+                            <h3 class="service-title-back">Ciberseguridad para no Técnicos</h3>
+                            <p class="service-description">Diseñado para ejecutivos, gerentes y profesionales no técnicos. Comprende las amenazas actuales, toma decisiones informadas y lidera una cultura de seguridad en tu organización sin necesidad de conocimientos previos en IT.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">Awareness</span>
+                                <span class="feature-tag">Phishing &amp; Ingeniería Social</span>
+                                <span class="feature-tag">Gestión de Riesgos</span>
+                                <span class="feature-tag">Cultura de Seguridad</span>
+                            </div>
+                            <a href="#contacto" class="service-cta-btn">Inscribirme</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Protección de Datos y Cumplimiento -->
+                <div class="service-card-flip reveal" style="--delay: 0.4s">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_5.png" alt="Protección de Datos y Cumplimiento Normativo" class="service-image">
+                            <div class="service-overlay">
+                                <div class="service-icon-badge">📜</div>
+                                <h3 class="service-title-front">Protección de Datos</h3>
+                                <p class="service-hover-hint">Clic para ver detalles →</p>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back">📜</div>
+                            <h3 class="service-title-back">Protección de Datos y Cumplimiento Normativo</h3>
+                            <p class="service-description">Implementa marcos de privacidad y cumplimiento normativo: GDPR, Ley de Protección de Datos, PCI-DSS e ISO 27701. Aprende a auditar procesos, gestionar consentimientos y evitar sanciones regulatorias millonarias.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">GDPR</span>
+                                <span class="feature-tag">PCI-DSS</span>
+                                <span class="feature-tag">ISO 27701</span>
+                                <span class="feature-tag">Auditorías de Privacidad</span>
+                            </div>
+                            <a href="#contacto" class="service-cta-btn">Inscribirme</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Respuesta a Incidentes -->
+                <div class="service-card-flip reveal" style="--delay: 0.5s">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_6.png" alt="Respuesta a Incidentes" class="service-image">
+                            <div class="service-overlay">
+                                <div class="service-icon-badge">🚨</div>
+                                <h3 class="service-title-front">Respuesta a Incidentes</h3>
+                                <p class="service-hover-hint">Clic para ver detalles →</p>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <div class="service-icon-back">🚨</div>
+                            <h3 class="service-title-back">Respuesta a Incidentes y Gestión de Crisis Cibernética</h3>
+                            <p class="service-description">Aprende a detectar, contener y erradicar ciberataques en tiempo real. Planes de respuesta, comunicación de crisis, análisis post-mortem y coordinación con equipos SOC. Imprescindible para líderes de seguridad.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">NIST IR</span>
+                                <span class="feature-tag">SOC Operations</span>
+                                <span class="feature-tag">Threat Hunting</span>
+                                <span class="feature-tag">Crisis Management</span>
+                            </div>
+                            <a href="#contacto" class="service-cta-btn">Inscribirme</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SHOWCASE / POR QUÉ ELEGIRNOS ===================== -->
+    <section class="section showcase" id="showcase">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-badge">⚡ Nuestra Diferencia</div>
+                <h2 class="section-title">¿Por qué <span class="title-gradient">CyberShield Academy</span>?</h2>
+                <p class="section-subtitle">No solo enseñamos teoría. Formamos profesionales listos para el campo real
+                    desde el primer día.</p>
+            </div>
+
+            <div class="showcase-grid">
+                <div class="showcase-card glass-card reveal" style="--delay: 0s">
+                    <div class="showcase-icon">🏆</div>
+                    <div class="showcase-metric">
+                        <span class="metric-number" data-target="98">0</span><span class="metric-suffix">%</span>
+                    </div>
+                    <h3>Tasa de Aprobación</h3>
+                    <p>Nuestros estudiantes superan los exámenes de certificación internacional al primer intento.</p>
+                </div>
+
+                <div class="showcase-card glass-card reveal" style="--delay: 0.1s">
+                    <div class="showcase-icon">🧪</div>
+                    <div class="showcase-metric">
+                        <span class="metric-number" data-target="200">0</span><span class="metric-suffix">+</span>
+                    </div>
+                    <h3>Horas de Labs Prácticos</h3>
+                    <p>Laboratorios virtuales y entornos reales para practicar sin restricciones.</p>
+                </div>
+
+                <div class="showcase-card glass-card reveal" style="--delay: 0.2s">
+                    <div class="showcase-icon">👨‍💻</div>
+                    <div class="showcase-metric">
+                        <span class="metric-number" data-target="25">0</span><span class="metric-suffix">+</span>
+                    </div>
+                    <h3>Instructores Expertos</h3>
+                    <p>Profesionales con experiencia activa en organizaciones líderes de seguridad global.</p>
+                </div>
+
+                <div class="showcase-card glass-card reveal" style="--delay: 0.3s">
+                    <div class="showcase-icon">🌍</div>
+                    <div class="showcase-metric">
+                        <span class="metric-number" data-target="45">0</span><span class="metric-suffix">+</span>
+                    </div>
+                    <h3>Países Representados</h3>
+                    <p>Comunidad global de estudiantes y egresados en posiciones de alto nivel.</p>
+                </div>
+            </div>
+
+            <!-- Feature list -->
+            <div class="feature-list reveal">
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-text">
+                        <strong>Laboratorios reales 24/7</strong> — Acceso continuo a entornos de práctica en la nube
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-text">
+                        <strong>Instructores certificados</strong> — CEH, OSCP, CISSP, CISM y más
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-text">
+                        <strong>Modalidades flexibles</strong> — Online en vivo, grabado y presencial disponibles
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-text">
+                        <strong>Bolsa de empleo exclusiva</strong> — Red de empresas partner que contratan nuestros
+                        egresados
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-text">
+                        <strong>Soporte post-curso</strong> — Mentoría activa durante 6 meses después de terminar
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-text">
+                        <strong>CTF Competitivo</strong> — Torneos mensuales de Capture The Flag para nuestros
+                        estudiantes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIOS ===================== -->
+    <section class="section testimonios" id="testimonios">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-badge">💬 Historias Reales</div>
+                <h2 class="section-title">Lo que dicen nuestros <span class="title-gradient">Egresados</span></h2>
+                <p class="section-subtitle">Miles de profesionales han transformado su carrera con nosotros.</p>
+            </div>
+
+            <div class="testimonios-grid">
+
+                <div class="testimonio-card glass-card reveal" style="--delay: 0s">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonio-text">CyberShield Academy cambió mi carrera por completo. En 6 meses obtuve mi
+                        CEH y conseguí trabajo como Pentester senior. Los laboratorios son increíbles, nada de teoría
+                        vacía.</p>
+                    <div class="testimonio-stars">★★★★★</div>
+                    <div class="testimonio-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #1D4ED8, #3B82F6);">
+                            <span>CR</span>
+                        </div>
+                        <div class="author-info">
+                            <strong>Carlos Rodríguez</strong>
+                            <span>Pentester Senior @ BankSecure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonio-card glass-card reveal" style="--delay: 0.15s">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonio-text">El curso de Forense Digital superó todas mis expectativas. Los
+                        instructores son profesionales activos con casos reales. La metodología hands-on es la mejor
+                        manera de aprender.</p>
+                    <div class="testimonio-stars">★★★★★</div>
+                    <div class="testimonio-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #0F4C81, #1D4ED8);">
+                            <span>SM</span>
+                        </div>
+                        <div class="author-info">
+                            <strong>Sofía Martínez</strong>
+                            <span>Analista Forense @ Policía Cibernética</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonio-card glass-card reveal" style="--delay: 0.3s">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonio-text">Implementé ISO 27001 en mi empresa gracias al curso de Cumplimiento. El
+                        soporte post-curso fue fundamental. Una inversión que se pagó sola en el primer mes.</p>
+                    <div class="testimonio-stars">★★★★★</div>
+                    <div class="testimonio-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+                            <span>AL</span>
+                        </div>
+                        <div class="author-info">
+                            <strong>Andrés López</strong>
+                            <span>CISO @ TechCorp México</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SOBRE NOSOTROS ===================== -->
+    <section class="section sobre-nosotros" id="sobre-nosotros">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual reveal">
+                    <div class="about-img-wrapper">
+                        <div class="about-glow"></div>
+                        <img src="images/about_image.png" alt="CyberShield Academy - Nuestro equipo" class="about-img">
+                        <div class="about-badge-floating">
+                            <span>🏆</span>
+                            <div>
+                                <strong>Centro Certificado</strong>
+                                <small>ISO & EC-Council</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content reveal" style="--delay: 0.2s">
+                    <div class="section-badge">🛡️ Quiénes Somos</div>
+                    <h2 class="section-title">Más que un curso,<br><span class="title-gradient">una comunidad</span>
+                    </h2>
+                    <p class="about-text">
+                        CyberShield Academy nació con una misión clara: cerrar la brecha de talento en ciberseguridad.
+                        Combinamos la experiencia de profesionales en activo con metodologías pedagógicas de vanguardia
+                        para formar expertos que el mundo digital necesita urgentemente.
+                    </p>
+                    <p class="about-text">
+                        Nuestros programas están diseñados desde la práctica real. Cada módulo refleja desafíos del
+                        mundo actual: ataques reales, herramientas reales, soluciones reales. No memorización, sino
+                        comprensión profunda que dura toda la carrera.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎯</div>
+                            <div>
+                                <strong>Misión</strong>
+                                <p>Formar los mejores expertos en ciberseguridad de Latinoamérica</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🌟</div>
+                            <div>
+                                <strong>Visión</strong>
+                                <p>Ser el referente # 1 en educación de seguridad digital en la región</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contacto" class="btn-primary" id="btn-about-cta">
+                        Conoce Nuestro Equipo
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="cta-final" id="contacto">
+        <div class="cta-glow-bg"></div>
+        <div class="container">
+            <div class="cta-content reveal">
+                <div class="section-badge">🚀 Próxima Cohorte</div>
+                <h2 class="cta-title">¿Listo para convertirte en<br><span class="title-gradient">Experto en
+                        Ciberseguridad</span>?</h2>
+                <p class="cta-subtitle">
+                    Únete a más de 2,500 profesionales que ya protegen el mundo digital.<br>
+                    Plazas limitadas — La próxima cohorte inicia en <strong>Marzo 2026</strong>
+                </p>
+
+                <div class="cta-form glass-card">
+                    <div class="form-group">
+                        <input type="text" id="input-nombre" class="form-input" placeholder="Tu nombre completo"
+                            autocomplete="name">
+                        <label for="input-nombre" class="form-label">Nombre</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="input-email" class="form-input" placeholder="tucorreo@ejemplo.com"
+                            autocomplete="email">
+                        <label for="input-email" class="form-label">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="input-celular" class="form-input" placeholder="+52 55 1234 5678"
+                            autocomplete="tel">
+                        <label for="input-celular" class="form-label">Número de Celular</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="input-curso" class="form-input form-select">
+                            <option value="" disabled selected>Selecciona un curso</option>
+                            <option value="fundamentos">Fundamentos Estratégicos de Seguridad de la Información</option>
+                            <option value="ethical-hacking">Ethical Hacking Desde Cero</option>
+                            <option value="active-directory">Seguridad Ofensiva y Defensiva en Active Directory</option>
+                            <option value="no-tecnicos">Ciberseguridad para no Técnicos</option>
+                            <option value="proteccion-datos">Protección de Datos y Cumplimiento Normativo</option>
+                            <option value="incidentes">Respuesta a Incidentes y Gestión de Crisis Cibernética</option>
+                        </select>
+                        <label for="input-curso" class="form-label">Curso de Interés</label>
+                    </div>
+                    <button class="btn-primary btn-form" id="btn-submit-form" onclick="submitForm()">
+                        <span>Reservar Mi Lugar Ahora</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <p class="form-disclaimer">🔒 Tus datos están seguros. Sin spam, sin compromisos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo">
+                        <img src="images/logo.png" alt="CyberShield Academy" class="logo-img logo-footer">
+                        <span class="logo-text">CyberShield<span class="logo-accent">Academy</span></span>
+                    </a>
+                    <p class="footer-tagline">Formando los guardianes del mundo digital desde 2018.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn" id="social-linkedin">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter" id="social-twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube" id="social-youtube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram" id="social-instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Cursos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#servicios">Fundamentos de Seguridad</a></li>
+                        <li><a href="#servicios">Ethical Hacking</a></li>
+                        <li><a href="#servicios">Seguridad en Active Directory</a></li>
+                        <li><a href="#servicios">Ciber para no Técnicos</a></li>
+                        <li><a href="#servicios">Protección de Datos</a></li>
+                        <li><a href="#servicios">Respuesta a Incidentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Academia</h4>
+                    <ul class="footer-links">
+                        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#showcase">Metodología</a></li>
+                        <li><a href="#testimonios">Egresados</a></li>
+                        <li><a href="#">Blog de Seguridad</a></li>
+                        <li><a href="#">CTF Competitivo</a></li>
+                        <li><a href="#">Certificaciones</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Contacto</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            info@cybershieldacademy.com
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.83 19.79 19.79 0 011 1.18 2 2 0 013 .96h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                            +1 (555) 234-5678
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Santa Cruz, Bolivia
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 CyberShield Academy. Todos los derechos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js?v=7"></script>
+</body>
+
+</html>
