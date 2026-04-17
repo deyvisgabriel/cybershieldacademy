@@ -623,10 +623,26 @@
                             autocomplete="email">
                         <label for="input-email" class="form-label">Email</label>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" id="input-celular" class="form-input" placeholder="+52 55 1234 5678"
-                            autocomplete="tel">
-                        <label for="input-celular" class="form-label">Número de Celular</label>
+                    <div class="form-group phone-form-group">
+                        <label class="form-label">Número de Celular</label>
+                        <div class="phone-input-wrapper">
+                            <!-- Country Code Picker -->
+                            <button type="button" class="country-picker-btn" id="country-picker-btn" aria-haspopup="listbox" aria-expanded="false">
+                                <span class="country-flag" id="selected-flag">🌎</span>
+                                <span class="country-dial" id="selected-dial">+1</span>
+                                <svg class="picker-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <!-- Country Dropdown -->
+                            <div class="country-dropdown" id="country-dropdown" role="listbox" aria-label="Selecciona país">
+                                <div class="country-search-wrapper">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                                    <input type="text" class="country-search" id="country-search" placeholder="Buscar país..." autocomplete="off">
+                                </div>
+                                <ul class="country-list" id="country-list"></ul>
+                            </div>
+                            <!-- Phone number input -->
+                            <input type="tel" id="input-celular" class="form-input phone-number-input" placeholder="XXXX XXXX" autocomplete="tel-local">
+                        </div>
                     </div>
                     <div class="form-group">
                         <select id="input-curso" class="form-input form-select">

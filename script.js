@@ -399,12 +399,182 @@ function initActiveNavLinks() {
 }
 
 /* =====================================================
-   11. FORM HANDLER — Webhook n8n
+   11. COUNTRY PHONE PICKER
    ===================================================== */
 
-const WEBHOOK_URL = 'https://deyvisgabriel.app.n8n.cloud/webhook/b3939211-0511-4ed1-863d-91d221e6b99a';
+const COUNTRIES = [
+    { name: 'Afghanistan',            flag: '🇦🇫', dial: '+93'   },
+    { name: 'Albania',                flag: '🇦🇱', dial: '+355'  },
+    { name: 'Alemania',               flag: '🇩🇪', dial: '+49'   },
+    { name: 'Arabia Saudita',         flag: '🇸🇦', dial: '+966'  },
+    { name: 'Argentina',              flag: '🇦🇷', dial: '+54'   },
+    { name: 'Australia',              flag: '🇦🇺', dial: '+61'   },
+    { name: 'Austria',                flag: '🇦🇹', dial: '+43'   },
+    { name: 'Bélgica',                flag: '🇧🇪', dial: '+32'   },
+    { name: 'Bolivia',                flag: '🇧🇴', dial: '+591'  },
+    { name: 'Brasil',                 flag: '🇧🇷', dial: '+55'   },
+    { name: 'Canadá',                 flag: '🇨🇦', dial: '+1'    },
+    { name: 'Chile',                  flag: '🇨🇱', dial: '+56'   },
+    { name: 'China',                  flag: '🇨🇳', dial: '+86'   },
+    { name: 'Colombia',               flag: '🇨🇴', dial: '+57'   },
+    { name: 'Corea del Sur',          flag: '🇰🇷', dial: '+82'   },
+    { name: 'Costa Rica',             flag: '🇨🇷', dial: '+506'  },
+    { name: 'Cuba',                   flag: '🇨🇺', dial: '+53'   },
+    { name: 'Dinamarca',              flag: '🇩🇰', dial: '+45'   },
+    { name: 'Ecuador',                flag: '🇪🇨', dial: '+593'  },
+    { name: 'Egipto',                 flag: '🇪🇬', dial: '+20'   },
+    { name: 'El Salvador',            flag: '🇸🇻', dial: '+503'  },
+    { name: 'Emiratos Árabes',        flag: '🇦🇪', dial: '+971'  },
+    { name: 'España',                 flag: '🇪🇸', dial: '+34'   },
+    { name: 'Estados Unidos',         flag: '🇺🇸', dial: '+1'    },
+    { name: 'Filipinas',              flag: '🇵🇭', dial: '+63'   },
+    { name: 'Finlandia',              flag: '🇫🇮', dial: '+358'  },
+    { name: 'Francia',                flag: '🇫🇷', dial: '+33'   },
+    { name: 'Ghana',                  flag: '🇬🇭', dial: '+233'  },
+    { name: 'Guatemala',              flag: '🇬🇹', dial: '+502'  },
+    { name: 'Honduras',               flag: '🇭🇳', dial: '+504'  },
+    { name: 'India',                  flag: '🇮🇳', dial: '+91'   },
+    { name: 'Indonesia',              flag: '🇮🇩', dial: '+62'   },
+    { name: 'Irak',                   flag: '🇮🇶', dial: '+964'  },
+    { name: 'Irán',                   flag: '🇮🇷', dial: '+98'   },
+    { name: 'Irlanda',                flag: '🇮🇪', dial: '+353'  },
+    { name: 'Israel',                 flag: '🇮🇱', dial: '+972'  },
+    { name: 'Italia',                 flag: '🇮🇹', dial: '+39'   },
+    { name: 'Japón',                  flag: '🇯🇵', dial: '+81'   },
+    { name: 'Kazajistán',             flag: '🇰🇿', dial: '+7'    },
+    { name: 'Kenya',                  flag: '🇰🇪', dial: '+254'  },
+    { name: 'Malasia',                flag: '🇲🇾', dial: '+60'   },
+    { name: 'Marruecos',              flag: '🇲🇦', dial: '+212'  },
+    { name: 'México',                 flag: '🇲🇽', dial: '+52'   },
+    { name: 'Nicaragua',              flag: '🇳🇮', dial: '+505'  },
+    { name: 'Nigeria',                flag: '🇳🇬', dial: '+234'  },
+    { name: 'Noruega',                flag: '🇳🇴', dial: '+47'   },
+    { name: 'Nueva Zelanda',          flag: '🇳🇿', dial: '+64'   },
+    { name: 'Países Bajos',           flag: '🇳🇱', dial: '+31'   },
+    { name: 'Pakistán',               flag: '🇵🇰', dial: '+92'   },
+    { name: 'Panamá',                 flag: '🇵🇦', dial: '+507'  },
+    { name: 'Paraguay',               flag: '🇵🇾', dial: '+595'  },
+    { name: 'Perú',                   flag: '🇵🇪', dial: '+51'   },
+    { name: 'Polonia',                flag: '🇵🇱', dial: '+48'   },
+    { name: 'Portugal',               flag: '🇵🇹', dial: '+351'  },
+    { name: 'Puerto Rico',            flag: '🇵🇷', dial: '+1'    },
+    { name: 'Reino Unido',            flag: '🇬🇧', dial: '+44'   },
+    { name: 'República Dominicana',   flag: '🇩🇴', dial: '+1'    },
+    { name: 'Rusia',                  flag: '🇷🇺', dial: '+7'    },
+    { name: 'Singapur',               flag: '🇸🇬', dial: '+65'   },
+    { name: 'Sudáfrica',              flag: '🇿🇦', dial: '+27'   },
+    { name: 'Suecia',                 flag: '🇸🇪', dial: '+46'   },
+    { name: 'Suiza',                  flag: '🇨🇭', dial: '+41'   },
+    { name: 'Tailandia',              flag: '🇹🇭', dial: '+66'   },
+    { name: 'Turquía',                flag: '🇹🇷', dial: '+90'   },
+    { name: 'Ucrania',                flag: '🇺🇦', dial: '+380'  },
+    { name: 'Uruguay',                flag: '🇺🇾', dial: '+598'  },
+    { name: 'Venezuela',              flag: '🇻🇪', dial: '+58'   },
+    { name: 'Vietnam',                flag: '🇻🇳', dial: '+84'   },
+];
 
-async function submitForm() {
+// Estado global del picker
+let selectedCountry = COUNTRIES.find(c => c.name === 'Bolivia') || COUNTRIES[0];
+
+function initCountryPicker() {
+    const btn        = document.getElementById('country-picker-btn');
+    const dropdown   = document.getElementById('country-dropdown');
+    const list       = document.getElementById('country-list');
+    const searchInput= document.getElementById('country-search');
+    const flagEl     = document.getElementById('selected-flag');
+    const dialEl     = document.getElementById('selected-dial');
+
+    if (!btn || !dropdown || !list) return;
+
+    // Render inicial
+    renderCountryList(COUNTRIES);
+    updatePickerDisplay();
+
+    // Abrir / cerrar dropdown
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.contains('open');
+        closeDropdown();
+        if (!isOpen) openDropdown();
+    });
+
+    // Buscar
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const filtered = COUNTRIES.filter(c =>
+            c.name.toLowerCase().includes(query) || c.dial.includes(query)
+        );
+        renderCountryList(filtered);
+    });
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+            closeDropdown();
+        }
+    });
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDropdown();
+    });
+
+    function openDropdown() {
+        dropdown.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        searchInput.value = '';
+        renderCountryList(COUNTRIES);
+        setTimeout(() => searchInput.focus(), 50);
+        // Scroll al elemento seleccionado
+        const selected = list.querySelector('.selected');
+        if (selected) selected.scrollIntoView({ block: 'nearest' });
+    }
+
+    function closeDropdown() {
+        dropdown.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function renderCountryList(countries) {
+        if (countries.length === 0) {
+            list.innerHTML = '<li class="country-list-empty">Sin resultados</li>';
+            return;
+        }
+        list.innerHTML = countries.map((c, i) => `
+            <li class="country-item ${c.name === selectedCountry.name ? 'selected' : ''}"
+                data-index="${COUNTRIES.indexOf(c)}"
+                role="option"
+                aria-selected="${c.name === selectedCountry.name}">
+                <span class="ci-flag">${c.flag}</span>
+                <span class="ci-name">${c.name}</span>
+                <span class="ci-code">${c.dial}</span>
+            </li>
+        `).join('');
+
+        // Click en item
+        list.querySelectorAll('.country-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const idx = parseInt(item.dataset.index);
+                selectedCountry = COUNTRIES[idx];
+                updatePickerDisplay();
+                closeDropdown();
+            });
+        });
+    }
+
+    function updatePickerDisplay() {
+        if (flagEl) flagEl.textContent = selectedCountry.flag;
+        if (dialEl) dialEl.textContent = selectedCountry.dial;
+    }
+}
+
+/* =====================================================
+   12. FORM HANDLER — WhatsApp
+   ===================================================== */
+
+const WHATSAPP_NUMBER = '59177839461'; // Número destino de WhatsApp (sin el +)
+
+function submitForm() {
     const nombreEl = document.getElementById('input-nombre');
     const emailEl = document.getElementById('input-email');
     const celularEl = document.getElementById('input-celular');
@@ -413,11 +583,13 @@ async function submitForm() {
 
     const nombre = nombreEl?.value.trim();
     const email = emailEl?.value.trim();
-    const celular = celularEl?.value.trim();
+    const localNumber = celularEl?.value.trim();
+    const dialCode = selectedCountry ? selectedCountry.dial : '';
+    const celular = localNumber ? `${dialCode} ${localNumber}` : '';
     const curso = cursoEl?.value;
 
     // --- Validaciones ---
-    if (!nombre || !email || !celular || !curso) {
+    if (!nombre || !email || !localNumber || !curso) {
         showNotification('⚠️ Por favor completa todos los campos', 'warning');
         return;
     }
@@ -427,69 +599,46 @@ async function submitForm() {
         return;
     }
 
-    if (!isValidPhone(celular)) {
+    if (!isValidPhone(localNumber)) {
         showNotification('⚠️ Ingresa un número de celular válido (mínimo 7 dígitos)', 'warning');
         return;
     }
 
     // --- Loading state ---
     if (btn) {
-        btn.innerHTML = '<span>Enviando...</span>';
+        btn.innerHTML = '<span>Redirigiendo...</span>';
         btn.disabled = true;
     }
 
-    // --- Payload JSON con todos los campos ---
-    const payload = {
-        nombre: nombre,
-        email: email,
-        celular: celular,
-        curso: curso,
-        fuente: 'CyberShield Academy — Landing Page',
-        fecha_envio: new Date().toISOString(),
-        url_origen: window.location.href
-    };
+    // --- Construir mensaje para WhatsApp ---
+    const cursoLabel = cursoEl.options[cursoEl.selectedIndex]?.text || curso;
+    const mensaje = `¡Hola! Me interesa reservar mi lugar en CyberShield Academy 🛡️
 
-    try {
-        const response = await fetch(WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+*Nombre:* ${nombre}
+*Email:* ${email}
+*Celular:* ${celular}
+*Curso de interés:* ${cursoLabel}
 
-        if (response.ok) {
-            // Éxito real confirmado por el servidor
-            if (btn) {
-                btn.innerHTML = '<span>✓ ¡Solicitud Enviada!</span>';
-                btn.style.background = 'linear-gradient(135deg, #22C55E, #16a34a)';
-            }
-            showNotification('🎉 ¡Excelente! Te contactaremos pronto para confirmar tu lugar.', 'success');
+Quedo a la espera de más información. ¡Gracias!`;
 
-            // Limpiar formulario y restaurar botón después de 3.5 s
-            setTimeout(() => {
-                if (btn) {
-                    btn.innerHTML = `<span>Reservar Mi Lugar Ahora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }
-                if (nombreEl) nombreEl.value = '';
-                if (emailEl) emailEl.value = '';
-                if (celularEl) celularEl.value = '';
-                if (cursoEl) cursoEl.value = '';
-            }, 3500);
+    const urlWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
 
-        } else {
-            throw new Error(`HTTP ${response.status}`);
-        }
+    // --- Mostrar notificación y redirigir ---
+    showNotification('✅ ¡Todo listo! Serás redirigido a WhatsApp.', 'success');
 
-    } catch (error) {
-        console.error('Error enviando formulario:', error);
+    setTimeout(() => {
+        window.open(urlWhatsApp, '_blank');
 
+        // Restaurar botón y limpiar formulario
         if (btn) {
             btn.innerHTML = `<span>Reservar Mi Lugar Ahora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
             btn.disabled = false;
         }
-        showNotification('❌ Hubo un problema al enviar. Por favor intenta de nuevo.', 'warning');
-    }
+        if (nombreEl) nombreEl.value = '';
+        if (emailEl) emailEl.value = '';
+        if (celularEl) celularEl.value = '';
+        if (cursoEl) cursoEl.value = '';
+    }, 1000);
 }
 
 
@@ -659,6 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initSmoothScroll();
     initScrollReveal();
+    initCountryPicker();
     initCounters();
     initFlipCards();
     initActiveNavLinks();
