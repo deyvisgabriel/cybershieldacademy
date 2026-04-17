@@ -624,21 +624,21 @@ Quedo a la espera de más información. ¡Gracias!`;
     const urlWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
 
     // --- Mostrar notificación y redirigir ---
-    showNotification('✅ ¡Todo listo! Serás redirigido a WhatsApp.', 'success');
+    showNotification('✅ ¡Todo listo! Redirigiendo a WhatsApp...', 'success');
 
-    setTimeout(() => {
-        window.open(urlWhatsApp, '_blank');
+    // Limpiar formulario y restaurar botón inmediatamente
+    if (nombreEl) nombreEl.value = '';
+    if (emailEl) emailEl.value = '';
+    if (celularEl) celularEl.value = '';
+    if (cursoEl) cursoEl.value = '';
+    if (btn) {
+        btn.innerHTML = `<span>Reservar Mi Lugar Ahora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+        btn.disabled = false;
+    }
 
-        // Restaurar botón y limpiar formulario
-        if (btn) {
-            btn.innerHTML = `<span>Reservar Mi Lugar Ahora</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
-            btn.disabled = false;
-        }
-        if (nombreEl) nombreEl.value = '';
-        if (emailEl) emailEl.value = '';
-        if (celularEl) celularEl.value = '';
-        if (cursoEl) cursoEl.value = '';
-    }, 1000);
+    // Redirigir inmediatamente — window.location.href nunca es bloqueado por el navegador.
+    // window.open() dentro de setTimeout es bloqueado como popup en producción.
+    window.location.href = urlWhatsApp;
 }
 
 
