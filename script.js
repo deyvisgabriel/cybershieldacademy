@@ -403,86 +403,86 @@ function initActiveNavLinks() {
    ===================================================== */
 
 const COUNTRIES = [
-    { name: 'Afghanistan',            flag: '🇦🇫', dial: '+93'   },
-    { name: 'Albania',                flag: '🇦🇱', dial: '+355'  },
-    { name: 'Alemania',               flag: '🇩🇪', dial: '+49'   },
-    { name: 'Arabia Saudita',         flag: '🇸🇦', dial: '+966'  },
-    { name: 'Argentina',              flag: '🇦🇷', dial: '+54'   },
-    { name: 'Australia',              flag: '🇦🇺', dial: '+61'   },
-    { name: 'Austria',                flag: '🇦🇹', dial: '+43'   },
-    { name: 'Bélgica',                flag: '🇧🇪', dial: '+32'   },
-    { name: 'Bolivia',                flag: '🇧🇴', dial: '+591'  },
-    { name: 'Brasil',                 flag: '🇧🇷', dial: '+55'   },
-    { name: 'Canadá',                 flag: '🇨🇦', dial: '+1'    },
-    { name: 'Chile',                  flag: '🇨🇱', dial: '+56'   },
-    { name: 'China',                  flag: '🇨🇳', dial: '+86'   },
-    { name: 'Colombia',               flag: '🇨🇴', dial: '+57'   },
-    { name: 'Corea del Sur',          flag: '🇰🇷', dial: '+82'   },
-    { name: 'Costa Rica',             flag: '🇨🇷', dial: '+506'  },
-    { name: 'Cuba',                   flag: '🇨🇺', dial: '+53'   },
-    { name: 'Dinamarca',              flag: '🇩🇰', dial: '+45'   },
-    { name: 'Ecuador',                flag: '🇪🇨', dial: '+593'  },
-    { name: 'Egipto',                 flag: '🇪🇬', dial: '+20'   },
-    { name: 'El Salvador',            flag: '🇸🇻', dial: '+503'  },
-    { name: 'Emiratos Árabes',        flag: '🇦🇪', dial: '+971'  },
-    { name: 'España',                 flag: '🇪🇸', dial: '+34'   },
-    { name: 'Estados Unidos',         flag: '🇺🇸', dial: '+1'    },
-    { name: 'Filipinas',              flag: '🇵🇭', dial: '+63'   },
-    { name: 'Finlandia',              flag: '🇫🇮', dial: '+358'  },
-    { name: 'Francia',                flag: '🇫🇷', dial: '+33'   },
-    { name: 'Ghana',                  flag: '🇬🇭', dial: '+233'  },
-    { name: 'Guatemala',              flag: '🇬🇹', dial: '+502'  },
-    { name: 'Honduras',               flag: '🇭🇳', dial: '+504'  },
-    { name: 'India',                  flag: '🇮🇳', dial: '+91'   },
-    { name: 'Indonesia',              flag: '🇮🇩', dial: '+62'   },
-    { name: 'Irak',                   flag: '🇮🇶', dial: '+964'  },
-    { name: 'Irán',                   flag: '🇮🇷', dial: '+98'   },
-    { name: 'Irlanda',                flag: '🇮🇪', dial: '+353'  },
-    { name: 'Israel',                 flag: '🇮🇱', dial: '+972'  },
-    { name: 'Italia',                 flag: '🇮🇹', dial: '+39'   },
-    { name: 'Japón',                  flag: '🇯🇵', dial: '+81'   },
-    { name: 'Kazajistán',             flag: '🇰🇿', dial: '+7'    },
-    { name: 'Kenya',                  flag: '🇰🇪', dial: '+254'  },
-    { name: 'Malasia',                flag: '🇲🇾', dial: '+60'   },
-    { name: 'Marruecos',              flag: '🇲🇦', dial: '+212'  },
-    { name: 'México',                 flag: '🇲🇽', dial: '+52'   },
-    { name: 'Nicaragua',              flag: '🇳🇮', dial: '+505'  },
-    { name: 'Nigeria',                flag: '🇳🇬', dial: '+234'  },
-    { name: 'Noruega',                flag: '🇳🇴', dial: '+47'   },
-    { name: 'Nueva Zelanda',          flag: '🇳🇿', dial: '+64'   },
-    { name: 'Países Bajos',           flag: '🇳🇱', dial: '+31'   },
-    { name: 'Pakistán',               flag: '🇵🇰', dial: '+92'   },
-    { name: 'Panamá',                 flag: '🇵🇦', dial: '+507'  },
-    { name: 'Paraguay',               flag: '🇵🇾', dial: '+595'  },
-    { name: 'Perú',                   flag: '🇵🇪', dial: '+51'   },
-    { name: 'Polonia',                flag: '🇵🇱', dial: '+48'   },
-    { name: 'Portugal',               flag: '🇵🇹', dial: '+351'  },
-    { name: 'Puerto Rico',            flag: '🇵🇷', dial: '+1'    },
-    { name: 'Reino Unido',            flag: '🇬🇧', dial: '+44'   },
-    { name: 'República Dominicana',   flag: '🇩🇴', dial: '+1'    },
-    { name: 'Rusia',                  flag: '🇷🇺', dial: '+7'    },
-    { name: 'Singapur',               flag: '🇸🇬', dial: '+65'   },
-    { name: 'Sudáfrica',              flag: '🇿🇦', dial: '+27'   },
-    { name: 'Suecia',                 flag: '🇸🇪', dial: '+46'   },
-    { name: 'Suiza',                  flag: '🇨🇭', dial: '+41'   },
-    { name: 'Tailandia',              flag: '🇹🇭', dial: '+66'   },
-    { name: 'Turquía',                flag: '🇹🇷', dial: '+90'   },
-    { name: 'Ucrania',                flag: '🇺🇦', dial: '+380'  },
-    { name: 'Uruguay',                flag: '🇺🇾', dial: '+598'  },
-    { name: 'Venezuela',              flag: '🇻🇪', dial: '+58'   },
-    { name: 'Vietnam',                flag: '🇻🇳', dial: '+84'   },
+    { name: 'Afghanistan', flag: '🇦🇫', dial: '+93' },
+    { name: 'Albania', flag: '🇦🇱', dial: '+355' },
+    { name: 'Alemania', flag: '🇩🇪', dial: '+49' },
+    { name: 'Arabia Saudita', flag: '🇸🇦', dial: '+966' },
+    { name: 'Argentina', flag: '🇦🇷', dial: '+54' },
+    { name: 'Australia', flag: '🇦🇺', dial: '+61' },
+    { name: 'Austria', flag: '🇦🇹', dial: '+43' },
+    { name: 'Bélgica', flag: '🇧🇪', dial: '+32' },
+    { name: 'Bolivia', flag: '🇧🇴', dial: '+591' },
+    { name: 'Brasil', flag: '🇧🇷', dial: '+55' },
+    { name: 'Canadá', flag: '🇨🇦', dial: '+1' },
+    { name: 'Chile', flag: '🇨🇱', dial: '+56' },
+    { name: 'China', flag: '🇨🇳', dial: '+86' },
+    { name: 'Colombia', flag: '🇨🇴', dial: '+57' },
+    { name: 'Corea del Sur', flag: '🇰🇷', dial: '+82' },
+    { name: 'Costa Rica', flag: '🇨🇷', dial: '+506' },
+    { name: 'Cuba', flag: '🇨🇺', dial: '+53' },
+    { name: 'Dinamarca', flag: '🇩🇰', dial: '+45' },
+    { name: 'Ecuador', flag: '🇪🇨', dial: '+593' },
+    { name: 'Egipto', flag: '🇪🇬', dial: '+20' },
+    { name: 'El Salvador', flag: '🇸🇻', dial: '+503' },
+    { name: 'Emiratos Árabes', flag: '🇦🇪', dial: '+971' },
+    { name: 'España', flag: '🇪🇸', dial: '+34' },
+    { name: 'Estados Unidos', flag: '🇺🇸', dial: '+1' },
+    { name: 'Filipinas', flag: '🇵🇭', dial: '+63' },
+    { name: 'Finlandia', flag: '🇫🇮', dial: '+358' },
+    { name: 'Francia', flag: '🇫🇷', dial: '+33' },
+    { name: 'Ghana', flag: '🇬🇭', dial: '+233' },
+    { name: 'Guatemala', flag: '🇬🇹', dial: '+502' },
+    { name: 'Honduras', flag: '🇭🇳', dial: '+504' },
+    { name: 'India', flag: '🇮🇳', dial: '+91' },
+    { name: 'Indonesia', flag: '🇮🇩', dial: '+62' },
+    { name: 'Irak', flag: '🇮🇶', dial: '+964' },
+    { name: 'Irán', flag: '🇮🇷', dial: '+98' },
+    { name: 'Irlanda', flag: '🇮🇪', dial: '+353' },
+    { name: 'Israel', flag: '🇮🇱', dial: '+972' },
+    { name: 'Italia', flag: '🇮🇹', dial: '+39' },
+    { name: 'Japón', flag: '🇯🇵', dial: '+81' },
+    { name: 'Kazajistán', flag: '🇰🇿', dial: '+7' },
+    { name: 'Kenya', flag: '🇰🇪', dial: '+254' },
+    { name: 'Malasia', flag: '🇲🇾', dial: '+60' },
+    { name: 'Marruecos', flag: '🇲🇦', dial: '+212' },
+    { name: 'México', flag: '🇲🇽', dial: '+52' },
+    { name: 'Nicaragua', flag: '🇳🇮', dial: '+505' },
+    { name: 'Nigeria', flag: '🇳🇬', dial: '+234' },
+    { name: 'Noruega', flag: '🇳🇴', dial: '+47' },
+    { name: 'Nueva Zelanda', flag: '🇳🇿', dial: '+64' },
+    { name: 'Países Bajos', flag: '🇳🇱', dial: '+31' },
+    { name: 'Pakistán', flag: '🇵🇰', dial: '+92' },
+    { name: 'Panamá', flag: '🇵🇦', dial: '+507' },
+    { name: 'Paraguay', flag: '🇵🇾', dial: '+595' },
+    { name: 'Perú', flag: '🇵🇪', dial: '+51' },
+    { name: 'Polonia', flag: '🇵🇱', dial: '+48' },
+    { name: 'Portugal', flag: '🇵🇹', dial: '+351' },
+    { name: 'Puerto Rico', flag: '🇵🇷', dial: '+1' },
+    { name: 'Reino Unido', flag: '🇬🇧', dial: '+44' },
+    { name: 'República Dominicana', flag: '🇩🇴', dial: '+1' },
+    { name: 'Rusia', flag: '🇷🇺', dial: '+7' },
+    { name: 'Singapur', flag: '🇸🇬', dial: '+65' },
+    { name: 'Sudáfrica', flag: '🇿🇦', dial: '+27' },
+    { name: 'Suecia', flag: '🇸🇪', dial: '+46' },
+    { name: 'Suiza', flag: '🇨🇭', dial: '+41' },
+    { name: 'Tailandia', flag: '🇹🇭', dial: '+66' },
+    { name: 'Turquía', flag: '🇹🇷', dial: '+90' },
+    { name: 'Ucrania', flag: '🇺🇦', dial: '+380' },
+    { name: 'Uruguay', flag: '🇺🇾', dial: '+598' },
+    { name: 'Venezuela', flag: '🇻🇪', dial: '+58' },
+    { name: 'Vietnam', flag: '🇻🇳', dial: '+84' },
 ];
 
 // Estado global del picker
 let selectedCountry = COUNTRIES.find(c => c.name === 'Bolivia') || COUNTRIES[0];
 
 function initCountryPicker() {
-    const btn        = document.getElementById('country-picker-btn');
-    const dropdown   = document.getElementById('country-dropdown');
-    const list       = document.getElementById('country-list');
-    const searchInput= document.getElementById('country-search');
-    const flagEl     = document.getElementById('selected-flag');
-    const dialEl     = document.getElementById('selected-dial');
+    const btn = document.getElementById('country-picker-btn');
+    const dropdown = document.getElementById('country-dropdown');
+    const list = document.getElementById('country-list');
+    const searchInput = document.getElementById('country-search');
+    const flagEl = document.getElementById('selected-flag');
+    const dialEl = document.getElementById('selected-dial');
 
     if (!btn || !dropdown || !list) return;
 
@@ -612,7 +612,7 @@ function submitForm() {
 
     // --- Construir mensaje para WhatsApp ---
     const cursoLabel = cursoEl.options[cursoEl.selectedIndex]?.text || curso;
-    const mensaje = `¡Hola! Me interesa reservar mi lugar en CyberShield Academy 🛡️
+    const mensaje = `¡Hola! Me interesa reservar mi lugar en CyberShield Academy
 
 *Nombre:* ${nombre}
 *Email:* ${email}
